@@ -1,4 +1,4 @@
-<%= form_for(@hunter) do |a| %>
+<%= form_for(@vampire) do |a| %>
     <%= a.label :name %>
     <%= a.text_field :name %><br><br>
 
@@ -8,5 +8,8 @@
     <%= a.label :speed %>
     <%= a.number_field :speed %><br><br>
 
-    <%= a.submit "Join The Hunt!" %>
+    <%= a.label :danger_level %>
+    <%= a.number_field :danger_level %><br><br>
+
+    <%= a.submit "Report" %>
 <% end %>

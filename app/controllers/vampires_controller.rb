@@ -29,7 +29,7 @@ class VampiresController < ApplicationController
 
     private
     def vampire_params
-        params.require(:vampire).permit(:name, :hp, :speed)
+        params.require(:vampire).permit(:name, :hp, :speed, :danger_level)
     end
 
     def locate
