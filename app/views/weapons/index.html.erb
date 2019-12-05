@@ -1,0 +1,7 @@
+<h1>The Holy Arsenal</h1>
+
+<% @weapons.each do |weapon|%>
+    <%= link_to weapon.name, weapon %><br><br>
+<% end %>
+
+<h2><%= link_to "Add A Weapon To The Armory", new_weapon_path %></h2>
