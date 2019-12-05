@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_234715) do
+ActiveRecord::Schema.define(version: 2019_12_04_235907) do
+
+  create_table "abilities", force: :cascade do |t|
+    t.string "name"
+    t.integer "damage"
+    t.integer "speed"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "encounters", force: :cascade do |t|
     t.boolean "advantage"
@@ -31,6 +40,15 @@ ActiveRecord::Schema.define(version: 2019_12_04_234715) do
     t.integer "hp"
     t.integer "speed"
     t.integer "danger_level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "weapons", force: :cascade do |t|
+    t.string "name"
+    t.integer "damage"
+    t.integer "speed"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
