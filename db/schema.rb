@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_235907) do
+ActiveRecord::Schema.define(version: 2019_12_05_183227) do
 
   create_table "abilities", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_12_04_235907) do
     t.boolean "advantage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "hunter_id"
+    t.integer "vampire_id"
   end
 
   create_table "hunters", force: :cascade do |t|
