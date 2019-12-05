@@ -29,10 +29,10 @@ class WeaponsController < ApplicationController
 
     private
     def weapon_params
-        params.require(:weapon).permit(:name, :damage, :speed, :description)
+        params.require(:weapon).permit(:name, :damage, :speed, :description, :hunter_id)
     end
 
     def locate
-        @weapon = weapon.find(params[:id])
+        @weapon = Weapon.find(params[:id])
     end
 end

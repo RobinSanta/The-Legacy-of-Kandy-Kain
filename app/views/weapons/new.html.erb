@@ -13,5 +13,8 @@
     <%= a.label :description %>
     <%= a.text_field :description %><br><br>
 
-    <%= a.submit "Add Weapon" %>
+    This Weapon Is For Hunter <%= a.collection_select :hunter_id, Hunter.all, :id, :name %><br><br>
+
+    <%= a.submit "Forge Weapon" %>
 <% end %>
+
