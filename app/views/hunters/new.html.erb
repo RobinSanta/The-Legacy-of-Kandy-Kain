@@ -1,0 +1,12 @@
+<%= form_for(@hunter) do |a| %>
+    <%=a.label :name %>
+    <%=a.text_field :name %><br><br>
+
+    <%=a.label :hp %>
+    <%=a.number_field :hp %><br><br>
+
+    <%=a.label :speed %>
+    <%=a.number_field :speed %><br><br>
+
+    <%=a.submit "Join The Hunt!" %>
+<% end %>
