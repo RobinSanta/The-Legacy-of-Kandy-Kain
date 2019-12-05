@@ -2,7 +2,7 @@
 Vitality: <%= @vampire.hp %><br><br>
 Speed: <%= @vampire.speed %><br><br>
 Danger Level: <%= @vampire.danger_level %><br><br>
-Powers: <br><br>
+Abilities: <br><br>
 <% @vampire.abilities.each do |ability| %>
     <%= link_to ability.name, ability %>
 <% end %><br><br>
