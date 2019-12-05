@@ -4,7 +4,7 @@ class HuntersController < ApplicationController
     end
 
     def show 
-        @hunter = Hunter.find(params[:id])
+        locate
     end
 
     def new
@@ -17,8 +17,22 @@ class HuntersController < ApplicationController
         redirect_to @hunter
     end
 
+    def edit
+        locate
+    end
+
+    def update
+        locate
+        @hunter.update(hunter_params)
+        redirect_to @hunter
+    end
+
     private
     def hunter_params
         params.require(:hunter).permit(:name, :hp, :speed)
+    end
+
+    def locate
+        @hunter = Hunter.find(params[:id])
     end
 end
