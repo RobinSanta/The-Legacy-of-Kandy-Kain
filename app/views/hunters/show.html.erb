@@ -1,6 +1,10 @@
 <h1><%= @hunter.name %></h1>
 Vitality: <%= @hunter.hp %><br><br>
 Speed: <%= @hunter.speed %><br><br>
-Your Weapon: <%=link_to @hunter.weapons.first.name, Weapon.find(params[:id]) %>
+Weapons: <br><br>
+<% @hunter.weapons.each do |weapon| %>
+    <%= link_to weapon.name, weapon %>
+<% end %><br><br>
 
 <h2><%= link_to "To The Sarafam's Fortresses", hunters_path %></h2>
+<h2><%= link_to  "To Armory", edit_hunter_path%>

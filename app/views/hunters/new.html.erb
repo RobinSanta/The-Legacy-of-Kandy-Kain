@@ -10,7 +10,5 @@
     <%= a.label :speed %>
     <%= a.number_field :speed %><br><br>
 
-    Select Your Weapon <%= a.collection_select :weapon_ids, Weapon.all, :id, :name %><br><br>
-
     <%= a.submit "Join The Hunt!" %>
 <% end %>

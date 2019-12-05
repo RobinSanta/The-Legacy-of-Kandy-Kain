@@ -1,0 +1,8 @@
+<h1>The Dark Gifts</h1>
+
+<% @abilities.each do |ability|%>
+    <%= link_to ability.name, ability %><br><br>
+<% end %>
+
+<h2><%= link_to "Add An Ability To The Spell Books", new_ability_path %></h2>
+<h2><%= link_to "To Kain's Legions", vampires_path %></h2>
