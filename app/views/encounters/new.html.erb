@@ -1,0 +1,7 @@
+<h1>Time For A Hunt</h1>
+
+<%= form_for(@encounter) do |a| %>
+    The Hunter  <%= a.collection_select :hunter_id, Hunter.all, :id, :name %><br><br>
+    The Fiend <%= a.collection_select :vampire_id, Vampire.all, :id, :name %><br><br>
+    <%= a.submit "Vae Victis"%>
+<% end %>

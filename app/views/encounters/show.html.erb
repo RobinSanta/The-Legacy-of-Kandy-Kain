@@ -1,2 +1,3 @@
-<h1>For Nosgoth!</h1>
-<h2><%= @encounter.time %></h2>
+<h1>For Nosgoth! <%= @encounter.time %></h1>
+<h3><%= Hunter.find(@encounter.hunter_id).name %> is hunting the vampire <%= Vampire.find(@encounter.vampire_id).name%></h3>
+

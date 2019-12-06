@@ -6,5 +6,4 @@ class Hunter < ApplicationRecord
     validates :name, presence: true
     validates :hp, numericality: {greater_than: 0}
     validates :speed, numericality: {greater_than: 0}
-
 end

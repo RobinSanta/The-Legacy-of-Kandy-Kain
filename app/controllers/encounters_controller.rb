@@ -3,6 +3,16 @@ class EncountersController < ApplicationController
         locate
     end
 
+    def new
+        @encounter = Encounter.new
+    end
+
+    def create
+        @encounter = Encounter.new(encounter_params)
+        @encounter.save
+        redirect_to @encounter
+    end
+
     private
     def locate
         @encounter = Encounter.find(params[:id])
