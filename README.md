@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You can create vampires and hunters with whatever stats you choose and pin them against each other
 
-Things you may want to cover:
+A hunter must have a weaopn, and a vampire an ability or else they cannot fight(will cause an error, need to change that)
 
-* Ruby version
+Create a weapon in "The Holy Arsenal -> Add Weapon To The Armory " and an ability in "Vampiric Powers -> Add An Ability To The Spell Books"
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Fight With "Organize A Hunt" or "Seek Out Prey"
