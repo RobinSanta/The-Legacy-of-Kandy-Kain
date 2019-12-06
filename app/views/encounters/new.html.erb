@@ -2,6 +2,8 @@
 
 <%= form_for(@encounter) do |a| %>
     The Hunter  <%= a.collection_select :hunter_id, Hunter.all, :id, :name %><br><br>
-    The Fiend <%= a.collection_select :vampire_id, Vampire.all, :id, :name %><br><br>
+    The Vampire <%= a.collection_select :vampire_id, Vampire.all, :id, :name %><br><br>
     <%= a.submit "Vae Victis"%>
 <% end %>
+
+<h2><%= link_to "Cancel Hunt", hunters_path %></h2>

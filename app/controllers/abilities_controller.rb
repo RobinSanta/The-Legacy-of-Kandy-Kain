@@ -28,7 +28,7 @@ class AbilitiesController < ApplicationController
     def update
         locate
         if @ability.valid?
-            @ability.update(ability)
+            @ability.update(ability_params)
             redirect_to @ability
         else
             render :edit

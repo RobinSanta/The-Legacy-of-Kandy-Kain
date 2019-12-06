@@ -28,7 +28,7 @@ class VampiresController < ApplicationController
     def update
         locate
         if @vampire.valid?
-            vampire.update(vampire_params)
+            @vampire.update(vampire_params)
             redirect_to @vampire
         else
             render :edit

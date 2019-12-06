@@ -13,6 +13,11 @@ class EncountersController < ApplicationController
         redirect_to @encounter
     end
 
+    def fight
+        locate
+        @encounter.fight
+    end
+
     private
     def locate
         @encounter = Encounter.find(params[:id])

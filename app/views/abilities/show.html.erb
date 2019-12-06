@@ -3,6 +3,7 @@ Power: <%= @ability.damage %><br><br>
 Speed: <%= @ability.speed %><br><br>
 Description: <%= @ability.description %><br><br>
 
-<h2><%= link_to "Return To Kain's Legions", vampires_path %></h2><br><br>
+<h2><%= link_to "Return To Kain's Legions", vampires_path %></h2>
+<h2><%= link_to "Evolve This Power", edit_ability_path %></h2><br><br>
 
 <%= button_to "Destroy", {:controller => :abilities, :action => 'destroy', :id => @ability.id }, :method => :delete %>
