@@ -7,4 +7,6 @@ Weapons: <br><br>
 <% end %><br><br>
 
 <h2><%= link_to "To The Sarafam's Fortresses", hunters_path %></h2>
-<h2><%= link_to  "To Armory", edit_hunter_path%>
+<h2><%= link_to  "Train", edit_hunter_path%><br><br>
+
+<%= button_to "Destroy", {:controller => :hunters, :action => 'destroy', :id => @hunter.id }, :method => :delete %>

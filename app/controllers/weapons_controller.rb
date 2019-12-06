@@ -13,8 +13,12 @@ class WeaponsController < ApplicationController
 
     def create
         @weapon = Weapon.new(weapon_params)
-        @weapon.save
-        redirect_to @weapon
+        if @weapon.valid?
+            @weapon.save
+            redirect_to @weapon
+        else
+            render :new
+        end
     end
 
     def edit
@@ -23,8 +27,18 @@ class WeaponsController < ApplicationController
 
     def update
         locate
-        @weapon.update(weapon_params)
-        redirect_to @weapon
+        if @weapon.valid?
+            @weapon.update(weapon_params)
+            redirect_to @weapon
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        locate
+        @weapon.destroy
+        redirect_to weapons_path
     end
 
     private

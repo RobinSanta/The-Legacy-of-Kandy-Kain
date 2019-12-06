@@ -3,4 +3,7 @@ Power: <%= @weapon.damage %><br><br>
 Speed: <%= @weapon.speed %><br><br>
 Description: <%= @weapon.description %><br><br>
 
+<h2> <%= link_to "Reforge", edit_weapon_path %></h2>
 <h2><%= link_to "To The Armory", weapons_path %></h2>
+
+<%= button_to "Destroy", {:controller => :weapons, :action => 'destroy', :id => @weapon.id }, :method => :delete %>

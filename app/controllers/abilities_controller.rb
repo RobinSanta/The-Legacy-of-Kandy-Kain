@@ -13,8 +13,12 @@ class AbilitiesController < ApplicationController
 
     def create
         @ability = Ability.new(ability_params)
-        @ability.save
-        redirect_to @ability
+        if @ability.valid?
+            @ability.save
+            redirect_to @ability
+        else
+            render :new
+        end
     end
 
     def edit
@@ -23,8 +27,18 @@ class AbilitiesController < ApplicationController
 
     def update
         locate
-        @ability.update(ability)
-        redirect_to @ability
+        if @ability.valid?
+            @ability.update(ability)
+            redirect_to @ability
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        locate
+        @ability.destroy
+        redirect_to abilities_path
     end
 
     private

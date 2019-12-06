@@ -13,8 +13,12 @@ class VampiresController < ApplicationController
 
     def create
         @vampire = Vampire.new(vampire_params)
-        @vampire.save
-        redirect_to @vampire
+        if @vampire.valid?
+            @vampire.save
+            redirect_to @vampire
+        else
+            render :new
+        end
     end
 
     def edit
@@ -23,8 +27,18 @@ class VampiresController < ApplicationController
 
     def update
         locate
-        @vampire.update(vampire_params)
-        redirect_to @vampire
+        if @vampire.valid?
+            vampire.update(vampire_params)
+            redirect_to @vampire
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        locate
+        @vampire.destroy
+        redirect_to vampires_path
     end
 
     private

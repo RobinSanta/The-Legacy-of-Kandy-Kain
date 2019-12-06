@@ -8,4 +8,6 @@ Abilities: <br><br>
 <% end %><br><br>
 
 <h2><%= link_to "To Kain's Legions", vampires_path %></h2>
-<h2><%= link_to "Feed", edit_vampire_path %></h2>
+<h2><%= link_to "Feed", edit_vampire_path %></h2><br><br>
+
+<%= button_to "Destroy", {:controller => :vampires, :action => 'destroy', :id => @vampire.id }, :method => :delete %>

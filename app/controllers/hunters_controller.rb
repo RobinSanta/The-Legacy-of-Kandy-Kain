@@ -13,8 +13,12 @@ class HuntersController < ApplicationController
 
     def create
         @hunter = Hunter.new(hunter_params)
-        @hunter.save
-        redirect_to @hunter
+        if @hunter.valid?
+            @hunter.save
+            redirect_to @hunter
+        else
+            render :new
+        end
     end
 
     def edit
@@ -23,8 +27,18 @@ class HuntersController < ApplicationController
 
     def update
         locate
-        @hunter.update(hunter_params)
-        redirect_to @hunter
+        if @hunter.valid?
+            @hunter.update(hunter_params)
+            redirect_to @hunter
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        locate
+        @hunter.destroy
+        redirect_to hunters_path
     end
 
     private
